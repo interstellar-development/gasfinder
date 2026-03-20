@@ -393,7 +393,7 @@
 
 <header>
   <div class="logo">GAS<span>FINDER</span></div>
-  <div class="tagline">Real stations · No API key needed</div>
+  <div class="tagline">Real stations near you</div>
 </header>
 
 <div class="container">
@@ -634,7 +634,7 @@
           const isC = s.id===cheapId, isN = s.id===closeId, both = isC&&isN;
           const cls = both?'both':isC?'cheapest':isN?'closest-card':'';
           const diff = (s.price-minPrice).toFixed(3);
-          const nav = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}&travelmode=driving`;
+          const nav = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLon}&destination=${s.lat},${s.lon}&travelmode=driving`;
           return `
           <a class="station-card ${cls}" href="${nav}" target="_blank" style="animation-delay:${i*0.04}s">
             <div class="rank">${i+1}</div>
